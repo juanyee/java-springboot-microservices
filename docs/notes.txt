@@ -1,0 +1,18 @@
+https://www.youtube.com/watch?v=9b6OOGMpx5Y&list=PLSVW22jAG8pDY3lXXEv1hKVIAlnJ9nDN_
+
+https://github.com/SaiUpadhyayula/springboot-microservices-project
+
+
+# spring.cloud.gateway.routes[0].id=product-service
+# spring.cloud.gateway.routes[0].uri=lb://product-service
+# spring.cloud.gateway.routes[0].predicates[0]=Path=/api/**
+# spring.cloud.gateway.routes[1].id=order-service
+# spring.cloud.gateway.routes[1].uri=lb://order-service
+# spring.cloud.gateway.routes[1].predicates[0]=Path=/api/order
+
+# spring.cloud.gateway.routes[0].id=order-service
+# spring.cloud.gateway.routes[0].uri=lb://order-service
+# spring.cloud.gateway.routes[0].predicates[0]=Path=/api/order
+# spring.cloud.gateway.routes[1].id=product-service
+# spring.cloud.gateway.routes[1].uri=lb://product-service
+# spring.cloud.gateway.routes[1].predicates[0]=Path=/api/**

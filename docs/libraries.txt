@@ -1,0 +1,48 @@
+# https://www.youtube.com/watch?v=Fq85GschdLw&list=PLSVW22jAG8pDY3lXXEv1hKVIAlnJ9nDN_
+
+spring cloud netflix eureka as discovery server
+spring cloud config server
+spring cloud vault
+spring boot actuator
+
+spring cloud bus - replace @RefreshScope for busrefresh
+spring cloud gateway - api gateway
+keycloak
+
+resilence4j - circuit breaker
+spring cloud feign - interservice communication with
+
+-----
+# event driven
+spring cloud streams
+spring cloud function
+
+# distributed tracing
+spring cloud sleuth
+spring cloud zipkin
+
+# centralized logging
+elk - elastic search, logstash, kibana
+
+####################################################################################
+
+# https://www.udemy.com/course/spring-boot-microservices-and-spring-cloud
+
+spring cloud netflix eureka as discovery server
+zuul - api gateway
+spring cloud bus
+spring boot actuator
+resilence4j - circuit breaker
+
+# distributed tracing
+spring cloud sleuth
+spring cloud zipkin
+
+# centralized logging
+elk - elastic search, logstash, kibana
+
+
+
+
+####################################################################################
+zuul
