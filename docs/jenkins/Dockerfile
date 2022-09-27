@@ -1,5 +1,6 @@
-FROM jenkins/jenkins:2.282-alpine
+FROM jenkins/jenkins:2.332.3-lts
 USER root
+
 # Pipeline
 RUN /usr/local/bin/install-plugins.sh workflow-aggregator && \
     /usr/local/bin/install-plugins.sh github && \
@@ -12,13 +13,15 @@ RUN /usr/local/bin/install-plugins.sh workflow-aggregator && \
     /usr/local/bin/install-plugins.sh github-branch-source
 
 # install Maven, Java, Docker, AWS
-RUN apk add --no-cache maven \
-    openjdk8 \
+RUN apt-get update &&  apt-get install -y \
+    maven \
+    openjdk-11-jdk \
     docker \
-    gettext
+    gettext \
+    wget
 
 # Kubectl
-RUN  wget https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
+RUN wget https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl && chmod +x ./kubectl && mv ./kubectl /usr/local/bin/kubectl
 
 # Need to ensure the gid here matches the gid on the host node. We ASSUME (hah!) this
 # will be stable....keep an eye out for unable to connect to docker.sock in the builds
