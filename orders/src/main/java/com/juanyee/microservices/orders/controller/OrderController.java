@@ -31,8 +31,10 @@ public class OrderController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public String get() {
-        return "hello";
+    public String get() throws UnknownHostException {
+        String message = "hello from " + InetAddress.getLocalHost();
+        System.out.println(message);
+        return message;
     }
 
     @PostMapping

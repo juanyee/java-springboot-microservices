@@ -6,7 +6,7 @@ metadata:
   labels:
     app: order
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: order
@@ -19,7 +19,10 @@ spec:
         - name: order
           image: juanyee/order-service
           ports:
-            - containerPort: 8080
+            - containerPort: 8001
+          env:
+            - name: EUREKA_DEFAULT_ZONE
+              value: http://discovery-service:8761/eureka
 ---
 apiVersion: v1
 kind: Service
@@ -34,4 +37,4 @@ spec:
     - name: http
       protocol: TCP
       port: 8001
-      targetPort: 8080
+      targetPort: 8001
